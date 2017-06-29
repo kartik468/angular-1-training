@@ -1,0 +1,8 @@
+<div class="section-four-container border">
+    <div class="header-text">ng-options directive use</div>
+    <label for="employee-select">Choose employee id: </label>
+    <select id="employee-select" ng-options="item as item.empid for item in employeeList track by item.empid" ng-model="selected"></select>
+    <div class="" ng-if="selected">
+      {{selected.name + " works from " + selected.place}}
+    </div>
+</div>

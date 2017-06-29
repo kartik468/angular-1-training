@@ -1,0 +1,16 @@
+<div class="section-two-container border">
+    <label for="classlist">Choose a CSS class: </label>
+    <select name="classlist" id="classlist" ng-model="currentClass">
+        <option ng-repeat="classname in availableClasses">{{classname}}</option>
+    </select>
+    <br />
+    <br />
+    <label>Enter some font-size: </label>
+    <input type="text" name="font-size" ng-model="currentFontSize">
+    <br />
+    <br />
+    <div>You have applied a CSS class named: {{currentClass}}</div>
+    <br />
+    <div ng-class="currentClass" ng-style="{'font-size': currentFontSize + 'px'}">Hello Angular</div>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="user-info">
+  <div class="header" ng-if="userIdVisible">
+    User Id: {{user.id}}
+  </div>
+  <div class="body">
+    <div class="address-section">
+      <div>Address:</div>
+      <div>City: {{user.address.city}}</div>
+      <div>State: {{user.address.state}}</div>
+      <div>Pincode: {{user.address.pincode}}</div>
+    </div>
+    <div class="friends-section">
+      <div>Friends:</div>
+      <ol>
+        <li ng-repeat="friend in user.friends">
+            {{friend}}
+        </li>
+      </ol>
+    </div>
+    <button type="button" ng-click="showUserId()" class="btn btn-primary" name="show-user-id">Show UserId</button>
+    <button type="button" ng-click="hideUserId()" class="btn btn-primary" name="hide-user-id">Hide UserId</button>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div>
+  <!-- All search <input type="text" ng-model="search.$">
+  Category search <input type="text" ng-model="search.category">
+  Name search <input type="text" ng-model="search.name"> -->
+  No of records to show: <input type="text" ng-model="limit">
+  <label for="category-select">Choose a category: </label>
+  <select id="category-select" ng-model="search.category">
+    <option value="">All</option>
+    <option value="Fruit">Fruit</option>
+    <option value="Fish">Fish</option>
+    <option value="Drink">Drink</option>
+  </select>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Expires in days</th>
+        <th>PRICE(currency)</th>
+        <th>PRICE(number)</th>
+        <th>EXPIRY(date)</th>
+        <th>NAME-category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="product in products | filter:search:strict | limitTo: limit">
+        <td>{{product.name}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.expiry}}</td>
+        <td>{{product.price | currency}}</td>
+        <td>{{product.price | number:4}}</td>
+        <td>{{addDays(currentDate, product.expiry) |date:'dd MMM yyyy'}}</td>
+        <td>{{product.name | uppercase}} {{product.category | lowercase}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,7 @@
+<div class="section-five-container border">
+  <label for="list-view">Use the List view</label>
+  <input type="checkbox" id="list-view" ng-model= "isListView">
+  <!-- <div ng-if="!isListView" ng-include="'partials/table-view.html'"></div>
+  <div ng-if="isListView" ng-include="'partials/list-view.html'"></div> -->
+  <div ng-include="isListView ? 'partials/list-view.html' : 'partials/table-view.html'"></div>
+</div>

@@ -1,0 +1,24 @@
+<div class="section-three-container border">
+    <div class="header-text">ToDo List</div>
+    <table class="table">
+        <tr>
+            <th>ToDo Number</th>
+            <th>Action</th>
+            <th>Done?</th>
+            <th>Assigned To</th>
+        </tr>
+        <tr ng-repeat="todo in todos" ng-class="$even ? 'even-row' : 'odd-row'">
+            <td>{{($first ? 'First' : ($last ? 'Last' : $index + 1))}}</td>
+            <td ng-class="{completed: actionDone === true}">{{todo.action}}</td>
+            <td class="done-td">
+                <input type="checkbox" name="done" ng-model="actionDone">
+            </td>
+            <td>
+                <div ng-repeat="assignedTo in todo.assignedTo">
+                    <span>{{$index + 1}}</span>
+                    <span>{{assignedTo}}</span>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

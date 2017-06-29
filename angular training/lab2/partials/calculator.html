@@ -1,0 +1,24 @@
+<div class="calculator-container container">
+	<div class="calculator-inputs">
+		<div class="row">
+			<label for="first-number" class="col-sm-4 col-md-4 col-lg-4">First Number: </label>
+			<input ng-model="firstNumber" type="text" id="first-number" class="col-sm-4 col-md-4 col-lg-4"/><br />
+		</div>
+		<div class="row">
+			<label for="second-number" class="col-sm-4 col-md-4 col-lg-4">Second Number: </label>
+			<input ng-model="secondNumber" type="text" id="second-number" class="col-sm-4 col-md-4 col-lg-4"/><br />
+		</div>
+		<div class="row">
+			<label for="operator" class="col-sm-4 col-md-4 col-lg-4">Operator: </label>
+			<input ng-model="operator" type="text" id="operator" class="col-sm-4 col-md-4 col-lg-4"/><br />
+		</div>
+		<div class="row">
+			<label for="decimal" class="col-sm-4 col-md-4 col-lg-4">Use Decimal: </label>
+			<input ng-model="decimal" type="checkbox" id="decimal"/><br />
+		</div>
+	</div>
+	<br />
+	<div class="result-section row">
+		Result: {{firstNumber}} {{operator}} {{secondNumber}} = <span>{{calculate(firstNumber, operator, secondNumber)}}</span>
+	</div>
+</div>

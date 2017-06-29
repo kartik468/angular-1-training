@@ -1,0 +1,14 @@
+<div class="section-one-container border">
+    <div class="show-container">
+        <label for="show">Show? </label>
+        <input ng-model="show" type="checkbox" id="show" />
+        <br />
+        <h2 ng-show="show">Hello</h2>
+    </div>
+    <div class="hide-container">
+        <label for="hide">Hide? </label>
+        <input ng-model="hide" type="checkbox" id="hide" />
+        <br />
+        <h2 ng-hide="hide">Welcome</h2>
+    </div>
+</div>
